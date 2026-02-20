@@ -464,6 +464,126 @@ img {
     grid-template-columns: 1fr;
   }
 }
+/* About Section */
+/* About Banner Section */
+.about__banner {
+  padding-top: 10rem;
+  background-image: url(./real-estate/img/about\ banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.about__wrapper {
+  padding: 10rem 0;
+  h2 {
+    color: var(--clr-primary);
+    font-weight: 700;
+    max-width: 40%;
+  }
+
+  p {
+    padding: 2rem 0;
+    max-width: 50%;
+  }
+
+  a {
+    margin: 4rem 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .about__banner {
+    padding-top: 6rem;
+    height: 100vh;
+    background-position: center;
+  }
+
+  .about__wrapper {
+    padding: 10rem 1.5rem;
+    h2 {
+      max-width: 100%;
+    }
+
+    p {
+      max-width: 90%;
+      padding: 1.5rem 0;
+      font-size: 16px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+    }
+  }
+}
+
+/* Services Section */
+.services {
+  padding: 8rem 0;
+}
+
+.services__wrapper {
+  margin: 0 10rem;
+  h3 {
+    color: var(--clr-primary);
+    text-align: center;
+    font-weight: 700;
+  }
+  p {
+    padding: 2rem 0;
+    text-align: justify;
+  }
+}
+
+.services__card {
+  margin: 4rem 0;
+  padding-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background-color: #d9d9d9;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  .services__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .services__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h4 {
+      color: var(--clr-primary);
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .services {
+    padding: 5rem 0;
+  }
+
+  .services__wrapper {
+    margin: 0 1.5rem;
+  }
+
+  .services__card {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+
+    .services__details {
+      padding: 0 1.5rem;
+    }
+  }
+
+  .services__img img {
+    height: 250px;
+  }
+}
 
 /* Assets */
 /* Property Card */
@@ -500,6 +620,127 @@ img {
   font-weight: 700;
 }
 
+/* Contact Section */
+.contact {
+  padding: 25rem 0 12.8rem 0;
+}
+
+.contact__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 10rem;
+  align-items: center;
+}
+
+/* Contact Left */
+.contact__left h2 {
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+.contact__details {
+  margin-top: 4rem;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  max-width: 75%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  .contact__logo {
+    width: 50px;
+    height: 50px;
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 30px;
+    flex-shrink: 0;
+  }
+
+  .contact__content {
+    p:last-child {
+      font-weight: bold;
+    }
+  }
+}
+
+/* Contact Right */
+
+.contact__form {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.form__row {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
+}
+
+.form__row input {
+  flex: 1;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 2rem;
+  border: 3px solid var(--clr-primary);
+  border-radius: 2rem;
+  font-size: 18px;
+  outline: none;
+}
+
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+.contact__form textarea {
+  resize: vertical;
+}
+
+.contact__form button {
+  margin-top: 2rem;
+  padding: 2rem 3rem;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .contact {
+    padding: 15rem 0 5rem 0;
+  }
+  .contact__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__form {
+    gap: 1rem;
+  }
+  .form__row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form__row input {
+    width: 100%;
+    flex: unset;
+  }
+
+  .contact__form button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
 /* Action Section */
 .property__action {
   display: flex;
@@ -515,22 +756,29 @@ img {
 
 .btn {
   display: inline-block;
-  background-color: transparent;
-  border: transparent;
   padding: 1rem 1.2rem;
-  color: transparent;
   border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--clr-dark);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
+
 .btn.bg--primary {
   background-color: var(--clr-primary);
   color: var(--clr-light);
 }
 
 .btn.bg--primary:hover {
-  border: 1px solid var(--clr-primary);
   background-color: var(--clr-light);
   color: var(--clr-dark);
-  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
+  border-color: var(--clr-primary);
 }
 
 h1 {
